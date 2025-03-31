@@ -1,18 +1,18 @@
-Short URL Service
+✂️ Short URL Service
 
 A simple URL shortener built with Node.js, Express, MongoDB, and EJS.
 
-Features
+🚀 Features
 
-Shorten long URLs
+🔗 Shorten long URLs
 
-Track visit history
+📊 Track visit history
 
-User authentication (Signup/Login)
+🔐 User authentication (Signup/Login)
 
-Admin panel for managing URLs
+🛠️ Admin panel for managing URLs
 
-Tech Stack
+🛠️ Tech Stack
 
 Backend: Node.js, Express.js
 
@@ -22,7 +22,7 @@ Frontend: EJS, Tailwind CSS
 
 Authentication: Cookies & Middleware
 
-Installation
+📦 Installation
 
 Clone the repository:
 
@@ -43,10 +43,10 @@ Start the server:
 
 npm start
 
-Usage
+🌐 Usage
 
-Open http://localhost:8000 in your browser.
+🔓 Open http://localhost:8000 in your browser.
 
-Sign up or log in.
+📝 Sign up or log in.
 
-Shorten URLs and manage them in your dashboard.
+✂️ Shorten URLs and manage them in your dashboard.

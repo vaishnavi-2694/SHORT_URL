@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomePage</title>
+</head>
+<body>
+  <% if (locals.id) { %>
+    <p>URL Generated: http://localhost/url/<%= id %> </p>
+  <% } %>
+
+  <div>
+    <form method="POST" action="/url">
+      <label>Enter Your Original URL</label>
+      <input type="text" id="originalURL" name="url" required placeholder="https://example.com"/>
+      <button type="submit" onclick="redirectPage()">Generate</button>
+    </form>
+  </div>
+  
+  <div>
+    <% if (locals.urls) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>S. No</th>
+            <th>ShortID</th>
+            <th>Redirects</th>
+            <th>Clicks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% locals.urls.forEach((url, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= url.ShortId %></td>
+              <td><%= url.redirectURL %></td>
+              <td><%= url.visitHistory.length %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+    </div>
+
+    <style>
+    body {
+      background-color: #1a202c; /* Dark mode background */
+      color: #f7fafc; /* Light text for contrast */
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    form {
+      background-color: #2d3748; /* Slightly lighter dark background */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #4a5568;
+      border-radius: 4px;
+      background-color: #2d3748;
+      color: #f7fafc;
+    }
+
+    button {
+      background-color: #3182ce;
+      color: #f7fafc;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #2b6cb0;
+    }
+
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background-color: #2d3748;
+      color: #f7fafc;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #4a5568;
+    }
+
+    th {
+      background-color: #4a5568;
+    }
+
+    tr:hover {
+      background-color: #3b4252;
+    }
+    </style>
+  </div>
+</body>
+</html>
